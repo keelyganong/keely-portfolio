@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LineSkip - Keely Ganong</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="brand" style="text-decoration:none;">Keely Ganong</a>
+  <div class="links">
+    <a href="index.html#work">work</a>
+    <a href="info.html">info</a>
+  </div>
+</nav>
+
+<section class="case-page">
+  <a class="case-back" href="index.html#work">← Back to selected work</a>
+
+  <div class="case-visual case-visual-lead" style="background-color:#3457C7;"><img src="assets/lineskip-hero.png" alt="LineSkip app showing bar deals, live events, and discovery"></div>
+
+  <div class="case-meta-bar">
+    <div><div class="k">Role</div><div class="v">Product Designer, independently extended</div></div>
+    <div><div class="k">Timeline</div><div class="v">Fall 2025, resumed Fall 2026</div></div>
+    <div><div class="k">Tools</div><div class="v">Figma, Claude, Claude Code, Vercel</div></div>
+  </div>
+
+  <div class="case-title-row">
+    <h1>Designing real-time nightlife clarity for Ann Arbor students</h1>
+    <div class="rule"></div>
+  </div>
+  <div class="sw-context" style="margin-bottom:14px;">Nightlife planning app, from Figma system to live prototype</div>
+  <div class="sw-tags" style="margin-bottom:24px;"><span>Mobile Product Design</span><span>Brand Design</span><span>AI-Assisted Development</span></div>
+  <p class="case-dek">LineSkip is a real-time nightlife decision and access app that lets University of Michigan students check a venue's live line, crowd, and cover before they leave. Users decide with clarity and can purchase line skip passes.</p>
+
+  <div class="proto-panel">
+    <div class="proto-embed-bar">
+      <span>Live prototype, try it yourself</span>
+      <a href="https://lineskip-app.vercel.app/intro.html" target="_blank" rel="noopener">Open in new tab ↗</a>
+    </div>
+    <div class="proto-frame">
+      <iframe src="https://lineskip-app.vercel.app/intro.html" loading="lazy" title="LineSkip live interactive prototype"></iframe>
+    </div>
+  </div>
+
+  <p class="case-body">I took LineSkip from a blank problem statement, University of Michigan students go out multiple nights a week with no reliable way of knowing what to expect, to a full interaction model and visual system that could solve this uncertainty. My work in Figma included a cohesive design system, a visual language that differentiated the product, and iterating through three feature areas: live status, a redesigned visual hierarchy, and an events/deals surface. I partnered with Figma Make early on to prototype interaction flows and bring designs closer to something real. That was the work I completed in school, in Fall 2025. Revisiting the project in Fall 2026, curious about experimenting with Claude Code and Vercel, I decided to take my Figma file into AI design tools so I could ship something a stranger could actually use.</p>
+
+  <p class="case-body">The first step in the AI phase was the handoff from Figma to Claude. I took my Figma system and turned it into real coded screens through Claude prompting. I got screens stitched together and clickable within hours and was able to apply my judgment to refine the flow and information hierarchy on a first pass. Through iterations back and forth, I brought my design thinking into the production of:</p>
+
+  <ul class="quiet-list">
+    <li>16 fully-routed, independent screens (business detail × 3 venues, checkout, deals, discover, event, event-drop, feed, intro, location, passes, profile, search, plus the two structural routes)</li>
+    <li>A real persisted user state with a "been / want to try" venue tracking system, backed by local storage</li>
+    <li>A multi-step interaction flow that generates a venue ranking modal, powered by a real scoring algorithm</li>
+  </ul>
+
+  <p class="case-body">After refining the product into a version that made sense stitched together, I brought everything into a build-out with Claude Code. Here I partnered with Claude Code to bring polish to interaction design, catch bugs and edge cases, and ensure the system held up to responsiveness in my own testing.</p>
+
+  <p class="case-body">Each stage of the design process with AI workflows integrated independent verification from my own user-centered mindset and product taste.</p>
+
+  <p class="case-body">The final part of the process was just the technical launch. I wanted to create a working product hosted beyond a Claude link. Experimenting with Vercel allowed me to deploy the product through a real hosting platform and be ready to put it in front of users.</p>
+
+  <p class="case-body">In working with AI to build LineSkip, I learned quickly that more ideas were possible and a clear product vision could be translated into a working prototype with deliberate validation at every handoff point. It was in Figma where my design took shape, but in Claude Code I got to see if what I was building was actually the right thing.</p>
+</section>
+
+<footer>
+  <span class="brand">KG</span>
+  <div class="links">
+    <a href="mailto:kganong@umich.edu">kganong@umich.edu</a>
+    <a href="https://www.linkedin.com/in/keely-ganong/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://drive.google.com/file/d/1ZHNiAdZQGn2GsmrLNO9-lgHIWzTGIwRA/view" target="_blank" rel="noopener">Resume</a>
+  </div>
+</footer>
+
+</body>
+</html>
