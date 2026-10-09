@@ -355,3 +355,7 @@ html[data-layout="grid"] .sw-expand{display:none;}
   html[data-layout="grid"] .sw-context,
   html[data-layout="grid"] .sw-tags{display:none;}
 }
+
+/* LineSkip walkthrough video */
+.video-panel video{display:block;width:100%;max-width:360px;height:auto;margin:0 auto;background:transparent;}
+.video-panel{padding-bottom:12px;}

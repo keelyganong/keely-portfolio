@@ -48,14 +48,15 @@
   <div class="sw-tags" style="margin-bottom:24px;"><span>Mobile Product Design</span><span>Brand Design</span><span>AI-Assisted Development</span></div>
   <p class="case-dek">LineSkip is a real-time nightlife decision and access app that lets University of Michigan students check a venue's live line, crowd, and cover before they leave. Users decide with clarity and can purchase line skip passes.</p>
 
-  <div class="proto-panel">
+  <div class="proto-panel video-panel">
     <div class="proto-embed-bar">
-      <span>Live prototype, try it yourself</span>
-      <a href="https://lineskip-app.vercel.app/intro.html" target="_blank" rel="noopener">Open in new tab ↗</a>
+      <span>Prototype walkthrough</span>
+      <a href="https://lineskip-app.vercel.app/intro.html" target="_blank" rel="noopener">Open the live prototype ↗</a>
     </div>
-    <div class="proto-frame">
-      <iframe src="https://lineskip-app.vercel.app/intro.html" loading="lazy" title="LineSkip live interactive prototype"></iframe>
-    </div>
+    <video id="lineskip-walkthrough" autoplay loop muted playsinline preload="auto" poster="assets/lineskip-poster.png" aria-label="Screen recording of the LineSkip prototype: browsing venues, opening a venue, saving it, then checking deals.">
+      <source src="assets/lineskip-walkthrough.webm" type="video/webm">
+      <source src="assets/lineskip-walkthrough.mp4" type="video/mp4">
+    </video>
   </div>
 
   <p class="case-body">I took LineSkip from a blank problem statement, University of Michigan students go out multiple nights a week with no reliable way of knowing what to expect, to a full interaction model and visual system that could solve this uncertainty. My work in Figma included a cohesive design system, a visual language that differentiated the product, and iterating through three feature areas: live status, a redesigned visual hierarchy, and an events/deals surface. I partnered with Figma Make early on to prototype interaction flows and bring designs closer to something real. That was the work I completed in school, in Fall 2025. Revisiting the project in Fall 2026, curious about experimenting with Claude Code and Vercel, I decided to take my Figma file into AI design tools so I could ship something a stranger could actually use.</p>
@@ -86,5 +87,22 @@
   </div>
 </footer>
 
+<script>
+// If the visitor prefers reduced motion: no autoplay, pause the video, and show its controls instead.
+(function () {
+  var v = document.getElementById('lineskip-walkthrough');
+  if (!v || !window.matchMedia) return;
+  var mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+  function apply() {
+    if (!mq.matches) return;
+    v.removeAttribute('autoplay');
+    v.autoplay = false;
+    v.pause();
+    v.controls = true;
+  }
+  apply();
+  if (mq.addEventListener) mq.addEventListener('change', apply);
+})();
+</script>
 </body>
 </html>
