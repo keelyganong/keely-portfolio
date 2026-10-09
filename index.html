@@ -16,6 +16,7 @@
 <meta name="twitter:title" content="Keely Ganong — Product Designer &amp; UX Researcher">
 <meta name="twitter:description" content="Portfolio of Keely Ganong, a San Francisco Bay Area product designer and UX researcher specializing in research-driven decisions and systems thinking.">
 <meta name="twitter:image" content="https://keelyganong.vercel.app/assets/og-image.jpg">
+<script>try{if(localStorage.getItem('sw-layout')==='grid')document.documentElement.setAttribute('data-layout','grid');}catch(e){}</script>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -25,6 +26,7 @@
   <div class="links">
     <a href="#work">work</a>
     <a href="info.html">info</a>
+    <a href="https://drive.google.com/file/d/1wT-pd2pLn5J7G1rViNfXt-i7XtK2VtQx/view?usp=sharing" target="_blank" rel="noopener">resume</a>
   </div>
 </nav>
 
@@ -44,10 +46,10 @@
 <section id="work">
   <div class="section-head">
     <div class="section-label">Selected work</div>
-    <svg class="hand-caret" viewBox="0 0 18 12" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <path d="M1.2 2.2 C4 4.3 6.6 7.4 9.2 10.3"/>
-      <path d="M16.9 1.7 C14.3 4.9 11.8 7.8 9 10.4"/>
-    </svg>
+    <div class="layout-toggle" role="group" aria-label="Project layout">
+      <button type="button" data-layout="list" aria-pressed="true" aria-label="List view" title="List view"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.23 6.08 C9.09 6.08 15.13 6.29 20.99 6.17"/><path d="M2.86 12.15 C8.60 12.22 14.52 12.00 20.27 12.09"/><path d="M3.49 17.88 C7.26 17.70 11.13 17.64 14.89 18.09"/></svg></button>
+      <button type="button" data-layout="grid" aria-pressed="false" aria-label="Grid view" title="Grid view"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2.76 2.90 C5.19 2.98 7.69 2.60 10.12 2.88 C10.21 5.40 10.42 7.99 10.54 10.51 C8.05 10.49 5.48 10.76 2.98 10.54 C3.16 7.81 2.77 5.00 3.04 2.27"/><path d="M13.75 3.08 C16.12 2.76 18.57 2.91 20.95 2.83 C20.91 5.42 20.76 8.08 21.10 10.66 C18.61 10.62 16.05 10.32 13.56 10.60 C13.52 7.96 13.47 5.24 13.86 2.62"/><path d="M2.77 13.79 C5.30 13.55 7.91 13.23 10.46 13.44 C10.17 15.96 10.83 18.54 10.56 21.05 C8.12 21.01 5.62 20.67 3.18 21.06 C3.06 18.47 2.98 15.80 3.16 13.20"/><path d="M13.54 13.37 C16.02 13.03 18.57 13.53 21.05 13.39 C20.64 15.87 20.72 18.42 20.99 20.91 C18.59 20.61 16.11 21.12 13.71 20.81 C13.57 18.27 13.76 15.66 14.03 13.13"/></svg></button>
+    </div>
   </div>
 
   <div class="sw-list">
@@ -99,6 +101,18 @@
       <div class="sw-tags"><span>UX Research</span><span>Product Thinking</span></div>
       <div class="sw-expand">
         <a class="sw-link" href="case-strava.html">Open full case study →</a>
+      </div>
+    </div>
+
+    <div class="sw-block" data-idx="4">
+      <a class="sw-image tight" href="case-indigo-blue.html" aria-label="Open Indigo Blue project" style="background-color:#17204B;"><picture><source srcset="assets/indigo-blue-card.webp" type="image/webp"><img src="assets/indigo-blue-card.jpg" width="1144" height="773" alt="Indigo Blue home page in a browser on an indigo background." loading="lazy" decoding="async"></picture></a>
+      <div class="sw-meta">
+        <a class="sw-title" href="case-indigo-blue.html">Indigo Blue</a>
+      </div>
+      <div class="sw-context">Since 2020, Indigo Blue has connected people through hand-dyed, one of one wearable art. This digital archive translates a brand grounded in touch and texture into an experience you can browse, discover, and feel online.</div>
+      <div class="sw-tags"><span>Design</span><span>Art Direction</span><span>Build</span></div>
+      <div class="sw-expand">
+        <a class="sw-link" href="case-indigo-blue.html">View project →</a>
       </div>
     </div>
 

@@ -69,3 +69,26 @@
     }
   });
 })();
+
+
+// Selected work: list / grid layout toggle. The choice is remembered between visits and pages.
+(function () {
+  var group = document.querySelector('.layout-toggle');
+  if (!group) return;
+  var root = document.documentElement;
+  var buttons = group.querySelectorAll('button[data-layout]');
+  function apply(layout) {
+    if (layout === 'grid') root.setAttribute('data-layout', 'grid'); else root.removeAttribute('data-layout');
+    Array.prototype.forEach.call(buttons, function (b) {
+      b.setAttribute('aria-pressed', String(b.getAttribute('data-layout') === layout));
+    });
+  }
+  apply(root.getAttribute('data-layout') === 'grid' ? 'grid' : 'list');
+  group.addEventListener('click', function (e) {
+    var b = e.target.closest('button[data-layout]');
+    if (!b) return;
+    var layout = b.getAttribute('data-layout');
+    apply(layout);
+    try { localStorage.setItem('sw-layout', layout); } catch (err) {}
+  });
+})();
