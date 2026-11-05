@@ -148,6 +148,12 @@ footer .links{display:flex; gap:16px; font-size:12px; color:var(--ink-soft);}
   margin-bottom:26px; flex-shrink:0;
 }
 .photo-slot img{width:100%; height:100%; object-fit:cover; object-position:center; display:block;}
+.info-intro{display:flex; align-items:flex-end; gap:28px; margin-bottom:26px;}
+.info-page .info-intro .photo-slot{margin-bottom:0;}
+.info-intro > div:last-child{min-width:0; flex:1;}
+.info-page .info-intro h1{margin:0 0 10px; max-width:none; white-space:nowrap;}
+.info-page .info-intro .meta-line{margin:0;}
+@media (max-width:640px){.info-intro{flex-direction:column; align-items:flex-start; gap:20px;} .info-page .info-intro h1{white-space:normal;}}
 .info-page h1{font-family:'Sorts Mill Goudy', serif; font-size:26px; color:var(--ink); max-width:18ch; margin-bottom:16px;}
 .info-page .meta-line{font-size:14px; font-style:italic; color:var(--ink-faint); max-width:52ch; margin-bottom:20px;}
 .info-page .bio{color:var(--ink-soft); max-width:56ch; margin-bottom:44px;}
@@ -333,11 +339,11 @@ footer .links{display:flex; gap:16px; font-size:12px; color:var(--ink-soft);}
 #panel-product .sw-block{opacity:0.7; transition:opacity 0.5s ease;}
 #panel-product .sw-block.active{opacity:1;}
 @media (prefers-reduced-motion:reduce){#panel-product .sw-block{transition:none;}}
-#panel-product .sw-list::before, #panel-product .sw-block::after{display:none;}
 #panel-product .sw-image{border-radius:0;}
 #panel-product a.sw-image:hover img{transform:none;}
 #panel-product .sw-title{font-size:18px;}
 #panel-product .sw-expand{max-height:none; opacity:1; margin-top:12px;}
+#panel-visual::before, #panel-visual::after{content:""; display:block; height:8px; margin:-4px 0; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 8' width='600' height='8'%3E%3Cpath d='M0.0 3.62 L5.0 3.80 L10.0 3.82 L15.0 3.74 L20.0 3.54 L25.0 3.37 L30.0 3.46 L35.0 3.53 L40.0 3.66 L45.0 3.37 L50.0 3.11 L55.0 2.75 L60.0 2.85 L65.0 3.05 L70.0 3.40 L75.0 3.54 L80.0 3.51 L85.0 3.51 L90.0 3.53 L95.0 3.78 L100.0 3.80 L105.0 3.83 L110.0 3.56 L115.0 3.54 L120.0 3.54 L125.0 3.79 L130.0 3.82 L135.0 3.64 L140.0 3.26 L145.0 2.89 L150.0 2.87 L155.0 2.96 L160.0 3.28 L165.0 3.28 L170.0 3.35 L175.0 3.24 L180.0 3.43 L185.0 3.58 L190.0 3.76 L195.0 3.71 L200.0 3.55 L205.0 3.52 L210.0 3.60 L215.0 3.93 L220.0 3.97 L225.0 3.93 L230.0 3.46 L235.0 3.19 L240.0 2.96 L245.0 3.10 L250.0 3.20 L255.0 3.24 L260.0 3.17 L265.0 3.09 L270.0 3.26 L275.0 3.40 L280.0 3.64 L285.0 3.51 L290.0 3.47 L295.0 3.34 L300.0 3.60 L305.0 3.86 L310.0 4.13 L315.0 4.05 L320.0 3.73 L325.0 3.43 L330.0 3.20 L335.0 3.30 L340.0 3.27 L345.0 3.32 L350.0 3.08 L355.0 3.09 L360.0 3.09 L365.0 3.35 L370.0 3.43 L375.0 3.39 L380.0 3.24 L385.0 3.16 L390.0 3.41 L395.0 3.71 L400.0 4.11 L405.0 4.05 L410.0 3.93 L415.0 3.56 L420.0 3.51 L425.0 3.46 L430.0 3.53 L435.0 3.41 L440.0 3.21 L445.0 3.12 L450.0 3.11 L455.0 3.34 L460.0 3.34 L465.0 3.33 L470.0 3.02 L475.0 3.01 L480.0 3.10 L485.0 3.55 L490.0 3.86 L495.0 4.00 L500.0 3.89 L505.0 3.67 L510.0 3.66 L515.0 3.64 L520.0 3.76 L525.0 3.54 L530.0 3.43 L535.0 3.19 L540.0 3.30 L545.0 3.37 L550.0 3.46 L555.0 3.28 L560.0 2.98 L565.0 2.84 L570.0 2.89 L575.0 3.31 L580.0 3.58 L585.0 3.84 L590.0 3.69 L595.0 3.69 L600.0 3.62 L600.0 4.72 L595.0 4.79 L590.0 4.79 L585.0 4.94 L580.0 4.68 L575.0 4.41 L570.0 3.99 L565.0 3.94 L560.0 4.08 L555.0 4.38 L550.0 4.56 L545.0 4.47 L540.0 4.40 L535.0 4.29 L530.0 4.53 L525.0 4.64 L520.0 4.86 L515.0 4.74 L510.0 4.76 L505.0 4.77 L500.0 4.99 L495.0 5.10 L490.0 4.96 L485.0 4.65 L480.0 4.20 L475.0 4.11 L470.0 4.12 L465.0 4.43 L460.0 4.44 L455.0 4.44 L450.0 4.21 L445.0 4.22 L440.0 4.31 L435.0 4.51 L430.0 4.63 L425.0 4.56 L420.0 4.61 L415.0 4.66 L410.0 5.03 L405.0 5.15 L400.0 5.21 L395.0 4.81 L390.0 4.51 L385.0 4.26 L380.0 4.34 L375.0 4.49 L370.0 4.53 L365.0 4.45 L360.0 4.19 L355.0 4.19 L350.0 4.18 L345.0 4.42 L340.0 4.37 L335.0 4.40 L330.0 4.30 L325.0 4.53 L320.0 4.83 L315.0 5.15 L310.0 5.23 L305.0 4.96 L300.0 4.70 L295.0 4.44 L290.0 4.57 L285.0 4.61 L280.0 4.74 L275.0 4.50 L270.0 4.36 L265.0 4.19 L260.0 4.27 L255.0 4.34 L250.0 4.30 L245.0 4.20 L240.0 4.06 L235.0 4.29 L230.0 4.56 L225.0 5.03 L220.0 5.07 L215.0 5.03 L210.0 4.70 L205.0 4.62 L200.0 4.65 L195.0 4.81 L190.0 4.86 L185.0 4.68 L180.0 4.53 L175.0 4.34 L170.0 4.45 L165.0 4.38 L160.0 4.38 L155.0 4.06 L150.0 3.97 L145.0 3.99 L140.0 4.36 L135.0 4.74 L130.0 4.92 L125.0 4.89 L120.0 4.64 L115.0 4.64 L110.0 4.66 L105.0 4.93 L100.0 4.90 L95.0 4.88 L90.0 4.63 L85.0 4.61 L80.0 4.61 L75.0 4.64 L70.0 4.50 L65.0 4.15 L60.0 3.95 L55.0 3.85 L50.0 4.21 L45.0 4.47 L40.0 4.76 L35.0 4.63 L30.0 4.56 L25.0 4.47 L20.0 4.64 L15.0 4.84 L10.0 4.92 L5.0 4.90 L0.0 4.72Z' fill='%2317204B'/%3E%3C/svg%3E") 0 center/600px 8px repeat-x;}
 .vd-grid{display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); column-gap:16px; row-gap:32px; padding:30px 0 26px;}
 .vd-item{display:flex; flex-direction:column; min-width:0;}
 .vd-image{display:block; aspect-ratio:1 / 1; overflow:hidden; margin-bottom:12px;}
