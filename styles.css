@@ -31,7 +31,7 @@ nav{
   padding:24px 32px;
   position:sticky; top:0; z-index:100; background:var(--paper);
 }
-nav .brand{font-family:'Sorts Mill Goudy', serif; font-style:italic; font-size:20px; color:var(--accent);}
+nav .brand{font-family:'Sorts Mill Goudy', serif; font-size:26px; line-height:1; color:var(--accent); white-space:nowrap;}
 nav .links{display:flex; gap:20px; font-size:13px; color:var(--ink); align-items:center;}
 nav .links a{padding:10px 0; color:#5E668C; border-bottom:1px solid transparent;}
 nav .links a:hover, nav .links a[aria-current="page"]{color:var(--ink); border-bottom-color:var(--ink);}
