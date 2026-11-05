@@ -4,12 +4,12 @@
 // scroll direction, no reliance on enter/exit events that can fall out
 // of sync when scrolling back up through blocks already triggered.
 (function () {
-  var blocks = Array.prototype.slice.call(document.querySelectorAll('.sw-block'));
-  if (!blocks.length) return;
+  if (!document.querySelector('.sw-block')) return;
 
   var ticking = false;
 
   function updateActive() {
+    var blocks = Array.prototype.slice.call(document.querySelectorAll('.sw-block')).filter(function (b) { return b.offsetParent !== null; });
     var viewportCenter = window.innerHeight / 2;
     var closest = null;
     var closestDist = Infinity;
@@ -71,24 +71,34 @@
 })();
 
 
-// Selected work: list / grid layout toggle. The choice is remembered between visits and pages.
+// Selected work: Product design / Visual design tabs.
+// #visual-design in the URL opens the visual tab (used by the visual project pages' back links).
 (function () {
-  var group = document.querySelector('.layout-toggle');
-  if (!group) return;
-  var root = document.documentElement;
-  var buttons = group.querySelectorAll('button[data-layout]');
-  function apply(layout) {
-    if (layout === 'grid') root.setAttribute('data-layout', 'grid'); else root.removeAttribute('data-layout');
-    Array.prototype.forEach.call(buttons, function (b) {
-      b.setAttribute('aria-pressed', String(b.getAttribute('data-layout') === layout));
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.work-tabs [role="tab"]'));
+  if (!tabs.length) return;
+  function select(tab, focus) {
+    tabs.forEach(function (t) {
+      var on = t === tab;
+      t.setAttribute('aria-selected', String(on));
+      t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
     });
+    if (focus) tab.focus();
+    try { history.replaceState(null, '', tab.id === 'tab-visual' ? '#visual-design' : '#work'); } catch (e) {}
+    window.dispatchEvent(new Event('scroll'));
   }
-  apply(root.getAttribute('data-layout') === 'grid' ? 'grid' : 'list');
-  group.addEventListener('click', function (e) {
-    var b = e.target.closest('button[data-layout]');
-    if (!b) return;
-    var layout = b.getAttribute('data-layout');
-    apply(layout);
-    try { localStorage.setItem('sw-layout', layout); } catch (err) {}
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { select(t, false); });
+    t.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+        e.preventDefault();
+        select(tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length], true);
+      }
+    });
   });
+  if (location.hash === '#visual-design') {
+    select(document.getElementById('tab-visual'), false);
+    var w = document.getElementById('work');
+    if (w) w.scrollIntoView();
+  }
 })();

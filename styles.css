@@ -32,10 +32,10 @@ nav{
   position:sticky; top:0; z-index:100; background:var(--paper);
 }
 nav .brand{font-family:'Sorts Mill Goudy', serif; font-style:italic; font-size:20px; color:var(--accent);}
-nav .links{display:flex; gap:22px; font-size:13px; color:var(--ink);}
-nav .links a{padding-bottom:4px; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 6' preserveAspectRatio='none'%3E%3Cpath d='M0.0 2.83 L25.0 2.63 L50.0 2.36 L75.0 2.34 L100.0 2.39 L125.0 2.44 L150.0 2.47 L175.0 2.53 L200.0 2.64 L225.0 2.73 L250.0 2.77 L275.0 2.79 L300.0 2.83 L325.0 2.84 L350.0 2.78 L375.0 2.70 L400.0 2.66 L425.0 2.64 L450.0 2.60 L475.0 2.57 L500.0 2.60 L525.0 2.65 L550.0 2.65 L575.0 2.60 L600.0 2.55 L625.0 2.49 L650.0 2.38 L675.0 2.23 L700.0 2.14 L725.0 2.12 L750.0 2.14 L775.0 2.17 L800.0 2.26 L825.0 2.40 L850.0 2.51 L875.0 2.54 L900.0 2.55 L925.0 2.63 L950.0 2.72 L975.0 2.77 L1000.0 2.79 L1000.0 2.98 L975.0 3.04 L950.0 3.17 L925.0 3.27 L900.0 3.34 L875.0 3.38 L850.0 3.40 L825.0 3.35 L800.0 3.28 L775.0 3.23 L750.0 3.20 L725.0 3.15 L700.0 3.10 L675.0 3.13 L650.0 3.23 L625.0 3.33 L600.0 3.42 L575.0 3.53 L550.0 3.64 L525.0 3.70 L500.0 3.66 L475.0 3.61 L450.0 3.59 L425.0 3.56 L400.0 3.52 L375.0 3.53 L350.0 3.62 L325.0 3.74 L300.0 3.80 L275.0 3.82 L250.0 3.83 L225.0 3.79 L200.0 3.66 L175.0 3.48 L150.0 3.36 L125.0 3.28 L100.0 3.23 L75.0 3.21 L50.0 3.24 L25.0 3.14 L0.0 3.06Z' fill='%2317204B'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:0 100%; background-size:0% 6px; transition:background-size 0.28s ease;}
-nav .links a:hover, nav .links a:focus-visible{background-size:100% 6px;}
-@media (prefers-reduced-motion:reduce){nav .links a{transition:none;}}
+nav .links{display:flex; gap:20px; font-size:13px; color:var(--ink); align-items:center;}
+nav .links a{padding:10px 0; color:#5E668C; border-bottom:1px solid transparent;}
+nav .links a:hover, nav .links a[aria-current="page"]{color:var(--ink); border-bottom-color:var(--ink);}
+nav .links a:focus-visible{outline:1.5px solid var(--ink); outline-offset:2px;}
 
 /* hero */
 .hero{position:relative; padding:20px 32px 60px; max-width:900px; margin:0 auto;}
@@ -144,7 +144,7 @@ footer .links{display:flex; gap:16px; font-size:12px; color:var(--ink-soft);}
 /* info page */
 .info-page{padding:20px 32px 60px; max-width:700px; margin:0 auto;}
 .photo-slot{
-  width:240px; height:240px; border-radius:50%; overflow:hidden;
+  width:240px; height:240px; border-radius:6px; overflow:hidden;
   margin-bottom:26px; flex-shrink:0;
 }
 .photo-slot img{width:100%; height:100%; object-fit:cover; object-position:center; display:block;}
@@ -324,13 +324,30 @@ footer .links{display:flex; gap:16px; font-size:12px; color:var(--ink-soft);}
 
 
 /* ---- list / grid toggle: two small hand-drawn icons ---- */
-.layout-toggle{display:flex; gap:2px; margin:-2px -6px -2px 0;}
-.layout-toggle button{display:flex; align-items:center; justify-content:center; width:34px; height:34px; padding:0; background:none; border:0; border-radius:4px; cursor:pointer; color:#5E668C;}
-.layout-toggle button svg{width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:1.2; stroke-linecap:round; stroke-linejoin:round; overflow:visible;}
-.layout-toggle button:hover{color:var(--ink);}
-.layout-toggle button[aria-pressed="true"]{color:var(--ink);}
-.layout-toggle button[aria-pressed="true"] svg{stroke-width:1.6;}
-.layout-toggle button:focus-visible{outline:1.5px solid var(--ink); outline-offset:1px;}
+.work-tabs{display:flex; gap:20px;}
+.work-tabs button{background:none; border:0; padding:10px 0; margin:0; cursor:pointer; font-family:'Inter', sans-serif; font-size:13px; color:#5E668C; border-bottom:1px solid transparent;}
+.work-tabs button:hover{color:var(--ink);}
+.work-tabs button[aria-selected="true"]{color:var(--ink); border-bottom-color:var(--ink);}
+.work-tabs button:focus-visible{outline:1.5px solid var(--ink); outline-offset:2px;}
+/* product design list: static and crisp, matching the visual grid */
+#panel-product .sw-block{opacity:0.7; transition:opacity 0.5s ease;}
+#panel-product .sw-block.active{opacity:1;}
+@media (prefers-reduced-motion:reduce){#panel-product .sw-block{transition:none;}}
+#panel-product .sw-list::before, #panel-product .sw-block::after{display:none;}
+#panel-product .sw-image{border-radius:0;}
+#panel-product a.sw-image:hover img{transform:none;}
+#panel-product .sw-title{font-size:18px;}
+#panel-product .sw-expand{max-height:none; opacity:1; margin-top:12px;}
+.vd-grid{display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); column-gap:16px; row-gap:32px; padding:30px 0 26px;}
+.vd-item{display:flex; flex-direction:column; min-width:0;}
+.vd-image{display:block; aspect-ratio:1 / 1; overflow:hidden; margin-bottom:12px;}
+.vd-image img{width:100%; height:100%; object-fit:cover; display:block;}
+.vd-image.contain{padding:12px;}
+.vd-image.contain picture{display:block; width:100%; height:100%;}
+.vd-image.contain img{object-fit:contain;}
+.vd-item .sw-title{font-size:14px; margin-bottom:4px;}
+.vd-item .sw-tags span{font-size:10px; padding:1px 7px;}
+@media (max-width:640px){.vd-grid{grid-template-columns:repeat(2, minmax(0,1fr)); column-gap:14px; row-gap:26px;} .vd-item .sw-tags{display:none;}}
 /* ---- grid view of the projects ---- */
 html[data-layout="grid"] .sw-list{position:relative; display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); column-gap:24px; row-gap:40px; padding-top:30px; align-items:start;}
 html[data-layout="grid"] .sw-list::before{position:absolute; top:-4px; left:0; right:0; margin:0;}
