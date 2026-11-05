@@ -64,7 +64,9 @@ nav .links a:focus-visible{outline:1.5px solid var(--ink); outline-offset:2px;}
 .section-head{display:flex; align-items:center; justify-content:space-between; gap:9px; margin-bottom:18px;}
 .section-head .section-label{margin-bottom:0;}
 
-#work{padding:20px 32px 10px; max-width:900px; margin:0 auto;}
+#work{padding:36px max(32px, calc((100% - 836px) / 2)) 30px; background:#EEF2FA;}
+.accent-word{color:#2E44A6;}
+@media (max-width:640px){#work{padding:28px 22px 22px;}}
 
 .sw-list{position:relative;}
 /* hand-drawn rules: thin pen strokes with tapered ends, each one drawn a little differently */
@@ -374,3 +376,12 @@ html[data-layout="grid"] .sw-expand{display:none;}
 .video-panel video{display:block;width:100%;max-width:360px;height:auto;margin:0 auto;background:transparent;}
 .video-panel{padding-bottom:12px;}
 
+/* Shared container: 1120px with fluid side padding, so nav, hero, and work line up on any screen */
+:root{--pad:clamp(24px, 5vw, 64px);}
+@media (min-width:641px){
+  nav{padding-left:max(var(--pad), calc((100% - 1120px) / 2)); padding-right:max(var(--pad), calc((100% - 1120px) / 2));}
+  .hero{max-width:calc(1120px + 2 * var(--pad)); padding-left:var(--pad); padding-right:var(--pad);}
+  .hero-illustration{right:var(--pad);}
+  #work{padding-left:max(var(--pad), calc((100% - 1120px) / 2)); padding-right:max(var(--pad), calc((100% - 1120px) / 2));}
+  .info-page{max-width:calc(1120px + 2 * var(--pad)); padding-left:var(--pad); padding-right:var(--pad);}
+}
