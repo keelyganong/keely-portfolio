@@ -385,3 +385,6 @@ html[data-layout="grid"] .sw-expand{display:none;}
   #work{padding-left:max(var(--pad), calc((100% - 1120px) / 2)); padding-right:max(var(--pad), calc((100% - 1120px) / 2));}
   .info-page{max-width:calc(1120px + 2 * var(--pad)); padding-left:var(--pad); padding-right:var(--pad);}
 }
+
+/* mobile: "Selected work" sits above the Product Design / Visual Design tabs */
+@media (max-width:640px){#work .section-head{flex-direction:column; align-items:flex-start; gap:6px;} .work-tabs{gap:18px;}}
